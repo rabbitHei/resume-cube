@@ -1,0 +1,662 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+li{
+    list-style: none;
+}
+html,body {
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(240, 240, 243);
+    background: url(../images/scroll_bg02.jpg) no-repeat center;
+    background-size: cover;
+}
+/*初始动画*/
+.firstA {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url(../images/scroll_bg01.jpg ) no-repeat center;
+    background-size: cover;
+    opacity: 1;
+    animation: oneA 1s linear 6.4s forwards;
+}
+@keyframes oneA {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.firstA .yuan1 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: url(../images/mandala.png) no-repeat center;
+    background-size: cover;
+    left: 10%;
+    top: 20%;
+    animation: yuan1A 3s linear forwards ;
+}
+@keyframes yuan1A {
+    0%{
+        transform:translate(0px,0px);
+        opacity: 0;
+    }
+    30%{
+        transform:translate(100px,300px);
+        opacity: 0.5;
+    }
+    45%{
+        transform:translate(160px,210px) rotateZ(-180deg);
+        opacity: 1;
+    }
+    55%{
+        transform:translate(100px,300px);
+    }
+    65%{
+        transform:translate(0px,300px) rotateZ(180deg);
+    }
+    85%{
+        transform:translate(100px,100px) rotateZ(360deg);
+    }
+    100%{
+        transform:translate(0px,0px) rotateZ(180deg);
+    }
+}
+.firstA .yuan2 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: url(../images/mandala2.png) no-repeat center;
+    background-size: cover;
+    right: 10%;
+    bottom: 20%;
+    animation: yuan2A 3s linear forwards ;
+}
+@keyframes yuan2A {
+    0%{
+        right: 10%;
+        transform: rotateZ(0deg);
+        opacity: 0;
+    }
+    50%{
+        right: 10%;
+        transform: rotateZ(-360deg);
+    }
+    100%{
+        right: 50%;
+        transform: rotateZ(-720deg);
+        opacity: 1;
+    }
+}
+.firstA .yuan3{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: url(../images/mandala3.png) no-repeat center;
+    background-size: cover;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-200%);
+    animation: yuan3A 3s linear forwards 2.4s;
+    opacity: 0;
+}
+@keyframes yuan3A {
+    0%{
+        bottom: 20%;
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    20%{
+        bottom: 20%;
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-200%) rotate(0deg);
+    }
+    100%{
+        bottom: 20%;
+        left: 0px;
+        transform: translateX(-200%) rotate(-360deg) ;
+    }
+
+}
+.firstA img.huaxu{
+    width:800px;
+    position: absolute;
+    left: 40%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    animation:img1A 1s linear 4.4s forwards;
+}
+@keyframes img1A {
+    0%{
+        opacity: 0;
+        left: 40%;
+        top: 60%;
+    }
+    100%{
+        opacity: 1;
+        left: 50%;
+        top: 50%;
+    }
+}
+.firstA .firstA-person {
+    position: absolute;
+    width: 400px;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%,50px);
+    opacity: 0;
+    animation: firstA-personA 1s forwards 5.4s;
+}
+@keyframes firstA-personA {
+    0%{
+        opacity: 0;
+        transform: translate(-50%,50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-20px) scale(1.2);
+    }
+}
+/*底部文字*/
+.txt-bt {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    color: rgb(63,63,69);
+    font-size: 30px;
+    font-weight: bold;
+    transform: translateZ(100px);
+    opacity: 0;
+}
+.txt-bt span {
+    float: left;
+    margin-right: 8px;
+    transition: 0.3s cubic-bezier(1, -0.99, 0.08, 1.79);
+}
+.txt-bt span:nth-child(1){
+    color: #fff;
+    margin-right: 15px;
+}
+.txt-bt span:nth-child(odd){
+    transform:translate(5px,5px) rotateZ(-15deg);
+}
+.txt-bt span:nth-child(even){
+    transform:translate(-5px,-5px) rotateZ(15deg);
+}
+.txt-bt.now{
+    transition: opacity 2s;
+    opacity: 1;
+}
+.txt-bt.now span{
+    transform: none;
+}
+/*导航*/
+.nav {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 97px;
+    height: 405px;
+    background: url(../images/kill_nav.png) no-repeat left top;
+}
+.nav ul li{
+    width: 100%;
+    height: 67.5px;
+}
+.nav ul li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+.nav ul li a.active{
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(1) a {
+    background-position: 0 0px;
+}
+.nav ul li:nth-child(1) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(2) a {
+    background-position: 0 -66px;
+}
+.nav ul li:nth-child(2) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(3) a {
+    background-position: 0 -135px;
+}
+.nav ul li:nth-child(3) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(4) a {
+    background-position: 0 -201px;
+}
+.nav ul li:nth-child(4) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(5) a {
+    background-position: 0 -270px;
+}
+.nav ul li:nth-child(5) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+.nav ul li:nth-child(6) a {
+    background-position: left bottom;
+}
+.nav ul li:nth-child(6) a:hover  {
+    background-image: url(../images/kill_nav_h.png);
+}
+/*魔方模块*/
+.box {
+    transform-style: preserve-3d;
+    /*border: 1px solid red;*/
+    width: 770px;
+    height: 440px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) rotateX(0deg) rotateY(0deg);
+}
+.box div {
+    transform-style: preserve-3d;
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transition:all 0.5s ease;
+}
+.box div span {
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10%;
+    width: 80%;
+    height:80%;
+}
+.box div span b {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+}
+.box div span strong {
+    position: absolute;
+    color:white;
+    font-size: 35px;
+    top: 5px;
+    left: 10px;
+    transform: translateZ(15px);
+}
+.box div:nth-child(23) span strong{
+    font-size: 25px;
+    width: 30px;
+    top: 15px;
+    left: 35px;
+}
+.box div:nth-child(24) span strong{
+    font-size: 25px;
+    width: 30px;
+    top: 15px;
+    left: 35px;
+}
+.box div:nth-child(25) span strong{
+    font-size: 25px;
+    width: 30px;
+    top: 15px;
+    left: 35px;
+}
+/*魔方背景 写哭了该用js控制*/
+.box div:nth-child(1) span {
+    background-color: rgb(244,67,54);
+}
+.box div:nth-child(1) span b{
+    background-image: url(../images/1.png);
+}
+.box div:nth-child(2) span {
+    background-color: deeppink;
+}
+.box div:nth-child(2) span b{
+    background-image: url(../images/2.png);
+}
+.box div:nth-child(3) span {
+    background-color: purple;
+}
+.box div:nth-child(3) span b{
+    background-image: url(../images/3.png);
+}
+.box div:nth-child(4) span {
+    background-color: rgb(103,58,183);
+}
+.box div:nth-child(4) span b{
+    background-image: url(../images/4.png);
+}
+.box div:nth-child(5) span {
+    background-color: rgb(63,81,181);
+}
+.box div:nth-child(5) span b{
+    background-image: url(../images/5.png);
+}
+.box div:nth-child(6) span {
+    background-color: rgb(33,150,243);
+}
+.box div:nth-child(6) span b{
+    background-image: url(../images/6.png);
+}
+.box div:nth-child(7) span {
+    background-color: rgb(3,169,244);
+}
+.box div:nth-child(7) span b{
+    background-image: url(../images/7.png);
+}
+.box div:nth-child(8) span {
+    background-color: rgb(0,188,212);
+}
+.box div:nth-child(8) span b{
+    background-image: url(../images/8.png);
+}
+.box div:nth-child(9) span {
+    background-color: rgb(0,150,136);
+}
+.box div:nth-child(9) span b{
+    background-image: url(../images/9.png);
+}
+.box div:nth-child(10) span {
+    background-color: rgb(76,175,80);
+}
+.box div:nth-child(10) span b{
+    background-image: url(../images/10.png);
+}
+.box div:nth-child(11) span {
+    background-color: rgb(139,195,74);
+}
+.box div:nth-child(11) span b{
+    background-image: url(../images/11.png);
+}
+.box div:nth-child(12) span {
+    background-color: rgb(205,220,57);
+}
+.box div:nth-child(12) span b{
+    background-image: url(../images/12.png);
+}
+.box div:nth-child(13) span {
+    background-color: rgb(255,235,59);
+}
+.box div:nth-child(13) span b{
+    background-image: url(../images/13.png);
+}
+.box div:nth-child(14) span {
+    background-color: rgb(255,193,7);
+}
+.box div:nth-child(14) span b{
+    background-image: url(../images/14.png);
+}
+.box div:nth-child(15) span {
+    background-color: rgb(255,152,0);
+}
+.box div:nth-child(15) span b{
+    background-image: url(../images/15.png);
+}
+.box div:nth-child(16) span {
+    background-color: rgb(255,87,34);
+}
+.box div:nth-child(16) span b{
+    background-image: url(../images/16.png);
+}
+.box div:nth-child(17) span {
+    background-color: rgb(121,85,72);
+}
+.box div:nth-child(17) span b{
+    background-image: url(../images/17.png);
+}
+.box div:nth-child(18) span {
+    background-color: rgb(86,69,69);
+}
+.box div:nth-child(18) span b{
+    background-image: url(../images/18.png);
+}
+.box div:nth-child(19) span {
+    background-color: rgb(96,125,139);
+}
+.box div:nth-child(19) span b{
+    background-image: url(../images/19.png);
+}
+.box div:nth-child(20) span {
+    background-color: rgb(64,93,107);
+}
+.box div:nth-child(20) span b{
+    background-image: url(../images/20.png);
+}
+.box div:nth-child(21) span {
+    background-color: rgb(158,158,158);
+}
+.box div:nth-child(21) span b{
+    background-image: url(../images/21.png);
+}
+.box div:nth-child(22) span {
+    background-color: rgb(112,115,125);
+}
+.box div:nth-child(22) span b{
+    background-image: url(../images/22.png);
+}
+.box div:nth-child(23) span {
+    background-color: rgb(103,103,114);
+}
+.box div:nth-child(23) span b {
+    background-color: rgb(46,46,55);
+}
+.box div:nth-child(24) span {
+    background-color: rgb(103,103,114);
+}
+.box div:nth-child(24) span b {
+    background-color: rgb(46,46,55);
+}
+.box div:nth-child(25) span {
+    background-color: rgb(103,103,114);
+}
+.box div:nth-child(25) span b{
+    background-color: rgb(46,46,55);
+}
+/*魔方搭建*/
+.box div span:nth-child(1) {
+    transform: translateZ(50px);
+
+}
+.box div span:nth-child(2) {
+    transform: translateZ(-50px) rotateX(180deg);
+
+}
+.box div span:nth-child(3) {
+    transform: translateX(-50px) rotateY(-90deg);
+
+}
+.box div span:nth-child(4) {
+    transform: translateX(50px) rotateY(90deg);
+
+}
+.box div span:nth-child(5) {
+    transform: translateY(-50px) rotateX(90deg);
+
+}
+.box div span:nth-child(6) {
+    transform: translateY(50px) rotateX(-90deg);
+
+}
+/*弹出层*/
+.pop {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100% ;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    transition:all 0.3s linear 0.5s;
+    opacity: 0;
+}
+.pop .back  {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.9);
+}
+.pop video {
+    width: 100%;
+    height: 100%;
+}
+.pop .popA1{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    background-color: rgba(155,155,155,.5);
+    width: 200px;
+    height: 80%;
+    transform: translate(0,-50%);
+    padding: 10px;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+.pop .popA1 h4{
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.pop .popA1 .pCont {
+    opacity: 0;
+}
+.pop .popA1 .pCont p{
+    line-height: 20px;
+}
+.pop.current .popA1 h4{
+    animation: h4A 1s linear 0.5s forwards;
+}
+.pop.current  .popA1 .pCont {
+   animation: pContA 1s linear 1s forwards;
+}
+@keyframes h4A {
+    0%{
+        transform:translate(0,-2000px);
+        opacity: 0;
+    }
+
+    60%{
+        transform:translate(0,25px);
+        opacity: 1;
+    }
+
+    75%{
+        transform:translate(0,-15px);
+    }
+
+    90%{
+        transform:translate(0,10px);
+    }
+
+    100%{
+        transform:translate(0,0px);
+    }
+
+}
+@keyframes pContA {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.pop .popA2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-position: center center;
+    /*display: none;*/
+}
+.pop .popA2 h3 {
+    position: absolute;
+    color: #204d74;
+    font-size: 350px;
+    font-weight: normal;
+    top: -200%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pop .popA2 .pCont2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    text-align: center;
+    color: orangered;
+}
+.pop .popA2 .pCont2 p:nth-child(1){
+    transform: translateX(-2000px);
+}
+.pop .popA2 .pCont2 p:nth-child(2){
+    transform: translateX(2000px);
+}
+.pop.current .popA2 h3{
+    animation: h3A 0.5s linear 1s forwards ;
+}
+.pop.current .popA2 .pCont2 p:nth-child(1){
+    animation: PA1 0.5s linear 1.5s forwards ;
+}
+.pop.current .popA2 .pCont2 p:nth-child(2){
+    animation: PA2 0.5s linear 1.5s forwards ;
+}
+@keyframes h3A {
+    0%{
+        top: -200%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+@keyframes PA1 {
+    0%{
+        transform: translateX(-2000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+@keyframes PA2 {
+    0%{
+        transform: translateX(2000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}

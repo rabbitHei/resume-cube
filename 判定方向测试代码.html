@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color: pink;
+		}
+	</style>
+	
+</head>
+<body>
+<div class="box"></div>
+	<script type="text/javascript">
+		var box = document.querySelector(".box");
+		box.onmouseenter=function(e){
+			var fx = e.clientX;
+            var fy = e.clientY;
+			var lx ;
+            var ly;
+			this.onmousemove=function(e){
+				lx = e.clientX;
+                ly = e.clientY;
+				var disx = lx -fx;
+                var disy = ly -fy;
+                var absx = Math.abs(disx);
+                console.log(disx,disy);
+				if(disx!=0||disy!=0){
+					this.onmousemove=null;
+                    
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>
